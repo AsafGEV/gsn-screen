@@ -1,0 +1,37 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+android {
+    namespace "com.gsn.screenplayer"
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.gsn.screenplayer"
+        minSdk 21
+        targetSdk 34
+        versionCode 4
+        versionName "2.2"
+    }
+    signingConfigs {
+        release {
+            storeFile file("../../keystore.jks")
+            storePassword "gsn2026"
+            keyAlias "gsnkey"
+            keyPassword "gsn2026"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions { jvmTarget = '11' }
+}
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+}
