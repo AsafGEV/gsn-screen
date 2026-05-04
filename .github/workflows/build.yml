@@ -23,6 +23,7 @@ jobs:
         keytool -genkeypair -keystore keystore.jks -alias gsnkey -keyalg RSA \
           -keysize 2048 -validity 9999 -storepass gsn2026 -keypass gsn2026 \
           -dname "CN=GSN,O=GSN,C=IL" -noprompt
+        echo "Keystore at: $(pwd)/keystore.jks"
     - name: Build
       run: gradle assembleRelease --no-daemon
     - uses: actions/upload-artifact@v4

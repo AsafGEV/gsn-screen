@@ -14,7 +14,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file("../../keystore.jks")
+            storeFile file("../keystore.jks")
             storePassword "gsn2026"
             keyAlias "gsnkey"
             keyPassword "gsn2026"
